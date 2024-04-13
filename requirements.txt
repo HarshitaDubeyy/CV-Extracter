@@ -1,4 +1,4 @@
 gunicorn==21.2.0
-win32com
 openpyxl
 PyPDF2
+python-docx
