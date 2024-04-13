@@ -67,12 +67,13 @@ cv_folder_path = Path("Sample2")
 extracted_data = []
 
 # Loop through all files in the folder
-for cv_file in cv_folder_path.iterdir():
-  if cv_file.is_file():
-    extracted_info_dict = extract_info(cv_file)
-    if extracted_info_dict:
-      extracted_data.append(extracted_info_dict)
+if __name__ == "__main__":
+  for cv_file in cv_folder_path.iterdir():
+    if cv_file.is_file():
+      extracted_info_dict = extract_info(cv_file)
+      if extracted_info_dict:
+        extracted_data.append(extracted_info_dict)
 
-write_to_excel(extracted_data, "extracted_cvs.xlsx")
+  write_to_excel(extracted_data, "extracted_cvs.xlsx")
 
-print("Information extracted and saved to extracted_cvs.xlsx")
+  print("Information extracted and saved to extracted_cvs.xlsx")
